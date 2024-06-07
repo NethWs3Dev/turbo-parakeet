@@ -10,7 +10,7 @@
   <style>
     body, html {
       font-family: "Lucida Console", "Courier New", monospace;
-      background-color: black;
+      background-color: #003180;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -20,7 +20,7 @@
       margin: 0;
     }
     .intro {
-      color: lime;
+      color: white;
       font-size: 24px;
       text-align: center;
       font-weight: 800;
@@ -29,7 +29,7 @@
       }
     .container {
       margin-top: 10px;
-      background: darkgreen;
+      background: #0061ff;
       border-radius: 10px;
       padding: 20px;
       width: 80%;
@@ -39,7 +39,7 @@
     input[type="Username"], input[type="password"] {
       font-family: "Lucida Console", "Courier New", monospace;
       font-size: 20px;
-      background-color: green;
+      background-color: #003180;
       width: calc(100% - 22px);
       padding: 10px;
       margin: 10px 0;
@@ -50,7 +50,7 @@
     }
 
     input[type="Username"]::placeholder, input[type="password"]::placeholder {
-      color: lime;  
+      color: white;  
       font-weight: 0;
       font-size: 11px;
     }
@@ -59,10 +59,10 @@
       font-family: "Lucida Console", "Courier New", monospace;
       width: calc(100% - 0px);
       padding: 6px;
-      background-color: limegreen;
+      background-color: #003180;
       border: none;
       border-radius: 20px;
-      color: darkgreen;
+      color: white;
       font-size: 18px;
       font-weight: 800;
       display: block;
@@ -72,25 +72,25 @@
 
     }
     button:hover {
-      background-color: lightgreen;
+      background-color: #0062ff;
     }
     .info {
       margin-top: 10px;
       font-size: 10px;
-      color: lime;
+      color: white;
     }
     
     .info1 {
       margin-top: 10px;
       font-size: 13px;
       font-weight: 800;
-      color: lime;
+      color: white;
     }
     
     neth {
       text-align: center;
       font-size: 10px;
-      color: lightgreen;
+      color: white;
     }
 
 
@@ -102,18 +102,18 @@
          box-sizing: border-box;
          border-radius: 5px;
          text-align: left;
-         color: black;
+         color: white;
 
     }
 
     @keyframes neon-border {
          from {
-        border-color: green;
-        box-shadow: 0 0 10px green, 0 0 20px green, 0 0 30px green; 
+        border-color: #003180;
+        box-shadow: 0 0 10px darkblue, 0 0 20px darkblue, 0 0 30px darkblue; 
          }
          to {
-        border-color: lime;
-        box-shadow: 0 0 50px lime, 0 0 40px lime, 0 0 60px lime;
+        border-color: #0061ff;
+        box-shadow: 0 0 50px blue, 0 0 40px blue, 0 0 60px blue;
          }
   </style>
 </head>
@@ -131,7 +131,7 @@
       
     </div>
     <div class="info">
-      <span style="color: lime; font-weight: 800;">Safe to use.<br>Copyright © 2024 - </span><span style="color: lime;">Kenneth Aceberos</span>
+      <span style="color: white; font-weight: 800;">Safe to use.<br>Copyright © 2024 - </span><span style="color: cyan;">Kenneth Aceberos</span>
     </div>
   </div>
 <script>
@@ -160,8 +160,8 @@
       title: "Choose Appstate Getter Method",
       showDenyButton: true,
       showCancelButton: true,
-      confirmButtonText: "V1",
-      denyButtonText: `V2`,
+      confirmButtonText: "V1 (Improved)",
+      denyButtonText: `V2 (New/Beta)`,
       confirmButtonColor: `#0061ff`,
       denyButtonColor: `#0061ff`
     }).then((result) => {
@@ -184,7 +184,7 @@ tang.textContent = 'Please Wait...';
             title: "Appstate",
             icon: "success",
             html: `
-              <p style="font-size: 9px; font-weight: 300;">Automatically Copied to Clipboard<br><textarea class="c1" readonly>${nigga}</textarea></p>
+              <p style="font-size: 12px; font-weight: 300;">Automatically Copied to Clipboard<br><br><textarea class="c1" readonly>${nigga}</textarea></p>
             `,
             showCloseButton: false,
             showCancelButton: false,
@@ -195,11 +195,11 @@ tang.textContent = 'Please Wait...';
           });
           copy(nigga);
         } else {
-          alert("Something went wrong. Wrong Username/Password. Try again.\n\n\nError log:" + response.data.error);
+          alert("Something went wrong. Maybe Wrong Username/Password. Try again");
         }
         document.getElementById('salp').style.display = 'block';
       }).catch(err => {
-        alert("Something went wrong.");      document.getElementById('salp').style.display = 'block';
+        alert("Something went wrong. Maybe Wrong Username/Password. Try again");      document.getElementById('salp').style.display = 'block';
       });
 tang.textContent = '';
     }
