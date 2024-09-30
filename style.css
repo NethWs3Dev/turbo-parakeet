@@ -1,0 +1,129 @@
+@import url('https://fonts.cdnfonts.com/css/argentum-sans');
+* { font-family: "Argentum Sans", sans-serif; }
+  body,
+    html {
+      background-color: #003180;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100vh;
+      color: white;
+      margin: 0;
+    }
+
+    .intro {
+      color: white;
+      font-size: 24px;
+      text-align: center;
+      font-weight: 800;
+      background: transparent;
+      opacity: 0;
+    }
+
+    .container {
+      margin-top: 10px;
+      background: #0061ff;
+      border-radius: 10px;
+      padding: 20px;
+      width: 80%;
+      animation: slideIn 1s ease;
+    }
+
+    input[type="Username"],
+    input[type="password"] {
+      font-size: 20px;
+      background-color: #003180;
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      outline: none;
+      color: white;
+      animation: a13 0.5s ease;
+    }
+
+    input[type="Username"]::placeholder,
+    input[type="password"]::placeholder {
+      color: white;
+      font-weight: 0;
+      font-size: 11px;
+    }
+
+    button {
+      width: calc(100% - 0px);
+      padding: 6px;
+      background-color: #003180;
+      border: none;
+      border-radius: 20px;
+      color: white;
+      font-size: 18px;
+      font-weight: 800;
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      transition: background-color 0.5s ease;
+    }
+
+    button:hover {
+      background-color: #0062ff;
+    }
+
+    .info {
+      margin-top: 10px;
+      font-size: 10px;
+      color: white;
+    }
+
+    .info1 {
+      margin-top: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      color: white;
+    }
+
+    neth {
+      text-align: center;
+      font-size: 10px;
+      color: white;
+    }
+
+
+    .c1 {
+      display: block;
+      width: 100%;
+      min-height: calc(100vh - 80vh);
+      padding: 10px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      text-align: left;
+      color: #0061ff;
+      font-size: 10px;
+    }
+
+     @keyframes slideIn {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes a13 {
+        from {
+          transform: translateY(-5px);
+          opacity: 0;
+        }
+
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+ 

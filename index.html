@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Appstate Getter</title>
+</head>
+
+<body>
+  <div class="container" id="container">
+    <div class="intro" id="intro">
+      <div class="powered" id="powered"></div>
+    </div>
+    <!--<form id="contain" onsubmit="login()">-->
+    <input type="Username" id="u1" placeholder="Email/Phone Number/UID/Username">
+    <input type="password" id="u2" placeholder="Password">
+    <button id="salp" onclick="choose()">SUBMIT</button>
+    <!--</form>-->
+    <div class="info1">
+      <p id="tang">⚠️ This appstate getter is recommended for BOT / DUMMY / NEW / FRESH account only, and doesn't work with old account and it will considered as wrong username/password or an error</p>
+
+    </div>
+    <div class="info">
+      <span style="color: white; font-weight: 800;">Safe to use.<br>Copyright © 2024 - </span><span style="color: cyan;">Neth Aceberos</span>
+    </div>
+  </div>
+  <script>
+    async function typeText(element, text, delay) {
+      for (let i = 0; i < text.length; i++) {
+        element.textContent += text.charAt(i);
+        await new Promise(resolve => setTimeout(resolve, delay));
+      }
+    }
+
+    async function animateIntro() {
+      const introText = document.getElementById('intro');
+      introText.style.opacity = "1";
+      await typeText(introText, 'Appstate Getter', 100);
+    }
+
+    async function choose() {
+      const user1 = document.getElementById('u1');
+      const pass1 = document.getElementById('u2');
+      if (!user1.value || !pass1.value) {
+        alert("Please enter login credentials.");
+        return;
+      }
+
+      Swal.fire({
+        title: "Choose Appstate Getter Method",
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: "V1 (Improved)",
+        denyButtonText: `V2 (New/Beta)`,
+        confirmButtonColor: `#0061ff`,
+        denyButtonColor: `#0061ff`
+      }).then((result) => {
+        if (result.isConfirmed) {
+          login1(false, user1.value, pass1.value);
+        } else if (result.isDenied) {
+          login1(true, user1.value, pass1.value);
+        }
+      });
+    }
+    async function login1(isNew, us, pa) {
+      document.getElementById('salp').style.display = "none";
+      const tangg = document.getElementById('tang');
+      tang.textContent = 'Please Wait...';
+      const tanga = isNew ? "v2" : "v1";
+      const response = await axios.get(`/appstate_pro${tanga}?user=${us}&pass=${pa}`).then(response => {
+        const nigga = response.data.appstate;
+        if (!response.data.error) {
+          Swal.fire({
+            title: "Appstate",
+            icon: "success",
+            html: `
+              <p style="font-size: 12px; font-weight: 300;">Automatically Copied to Clipboard<br><br><textarea class="c1" readonly>${nigga}</textarea></p>
+            `,
+            showCloseButton: false,
+            showCancelButton: false,
+            focusConfirm: false,
+            confirmButtonText: `
+              Okay
+            `
+          });
+          copy(nigga);
+        } else {
+          alert("Something went wrong. Maybe Wrong Username/Password. Try again");
+        }
+        document.getElementById('salp').style.display = 'block';
+      }).catch(err => {
+        alert("Something went wrong. Maybe Wrong Username/Password. Try again");
+        document.getElementById('salp').style.display = 'block';
+      });
+      tang.textContent = '';
+    }
+    async function copy(text) {
+      await navigator.clipboard.writeText(text);
+    }
+    animateIntro();
+  </script>
+</body>
+
+</html>
