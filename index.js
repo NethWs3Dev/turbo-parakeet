@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname)));
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "sheshable.html"));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
 async function getCookie(email, password, callback) {
